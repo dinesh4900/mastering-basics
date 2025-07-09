@@ -88,6 +88,130 @@ class NewArray<T> {
     this.elements = newElements;
     return this.length;
   }
+
+  /**
+   * Returns the index of the last occurrence of a specified value in an array, or -1 if it is not present.
+   * @param searchElement  — The value to locate in the array.
+   * @param startWith - The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array.
+   */
+  lastIndexOf(searchElement: T, startWith: number = this.length - 1): number {
+    if (!this.length) return -1;
+
+    for (var i = startWith; i >= 0; i--) {
+      if (this.elements[i] === searchElement) return i;
+    }
+    return -1;
+  }
+
+  /**
+   * Reverses the elements in an array in place. This method mutates the array and returns a reference to the same array.
+   */
+  reverse() {
+    for (var i = 0; i < this.length / 2; i++) {
+      const oppositeIndex = this.length - 1 - i;
+      const temp = this.elements[i];
+
+      this.elements[i] = this.elements[oppositeIndex];
+      this.elements[oppositeIndex] = temp;
+    }
+    return this.elements;
+  }
+
+  /**
+   * Adds all the elements of an array into a string, separated by the specified separator string.
+   * @param seperator  A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma.
+   */
+  join(seperator: string) {
+    if (this.length === 0) return '';
+
+    let result = '';
+    for (var i = 0; i <= this.length - 1; i++) {
+      result = result + this.elements[i];
+
+      if (i < this.length - 1) {
+        result = result + seperator;
+      }
+    }
+    return result;
+  }
+
+  /**
+   * Performs the specified action for each element in an array.
+   * @param callbackfunction A function that accepts up to three arguments. forEach calls the callbackfn function one time for each element in the array
+   */
+  forEach(callbackfunction: (value: T, index: number, array: T[]) => void) {
+    for (var i = 0; i < this.length; i++) {
+      callbackfunction(this.elements[i], i, this.elements);
+    }
+  }
+
+  /**
+   * Returns the value of the first element in the array where predicate is true, and undefined otherwise.
+   */
+  find(callbackfunction: (value: T, index: number, array: T[]) => boolean) {
+    for (var i = 0; i < this.length; i++) {
+      if (callbackfunction(this.elements[i], i, this.elements)) {
+        return this.elements[i];
+      }
+    }
+    return undefined;
+  }
+
+  /**
+   * Returns the index of the first element in the array where predicate is true, and -1 otherwise.
+   */
+  findIndex(
+    callbackfunction: (value: T, index: number, array: T[]) => boolean
+  ): number {
+    for (var i = 0; i < this.length; i++) {
+      if (callbackfunction(this.elements[i], i, this.elements)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  some(
+    callbackfunction: (value: T, index: number, array: T[]) => boolean
+  ): boolean {
+    for (var i = 0; i < this.length; i++) {
+      if (callbackfunction(this.elements[i], i, this.elements)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  every(
+    callbackfunction: (value: T, index: number, array: T[]) => boolean
+  ): boolean {
+    for (var i = 0; i < this.length; i++) {
+      if (!callbackfunction(this.elements[i], i, this.elements)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  map(callbackfunction: (value: T, index: number, array: T[]) => any) {
+    const newArray = [];
+    for (var i = 0; i < this.length; i++) {
+      const newValue = callbackfunction(this.elements[i], i, this.elements);
+      newArray[i] = newValue;
+    }
+    return new NewArray(newArray);
+  }
+
+  filter(callbackfunction: (value: T, index: number, array: T[]) => any) {
+    const newArray = [];
+    for (var i = 0; i < this.length; i++) {
+      const newValue = callbackfunction(this.elements[i], i, this.elements);
+      if (newValue) {
+        newArray[newArray.length] = this.elements[i];
+      }
+    }
+    return new NewArray(newArray);
+  }
 }
 
 const arr = ['God', 'jod', 'bgmi', 'hello'];

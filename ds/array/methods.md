@@ -19,30 +19,30 @@
 
 - [x] `includes()` – Checks if an element is present.
 - [x] `indexOf()` – Returns the first index of an element.
-- [ ] `lastIndexOf()` – Returns the last index of an element.
-- [ ] `find()` – Returns the first element that matches a condition.
-- [ ] `findIndex()` – Returns the index of the first matching element.
+- [x] `lastIndexOf()` – Returns the last index of an element.
+- [x] `find()` – Returns the first element that matches a condition.
+- [x] `findIndex()` – Returns the index of the first matching element.
 
 ## ✅ Iteration
 
-- [ ] `forEach()` – Executes a function for each element.
-- [ ] `map()` – Creates a new array by applying a function to each element.
-- [ ] `filter()` – Filters elements based on a condition.
+- [x] `forEach()` – Executes a function for each element.
+- [x] `map()` – Creates a new array by applying a function to each element.
+- [x] `filter()` – Filters elements based on a condition.
 - [ ] `reduce()` – Reduces the array to a single value.
 - [ ] `reduceRight()` – Similar to `reduce()` but from right to left.
-- [ ] `some()` – Returns `true` if at least one element passes the condition.
-- [ ] `every()` – Returns `true` if all elements pass the condition.
+- [x] `some()` – Returns `true` if at least one element passes the condition.
+- [x] `every()` – Returns `true` if all elements pass the condition.
 - [ ] `flat()` – Flattens nested arrays into a single array.
 - [ ] `flatMap()` – Maps and flattens one level deep.
 
 ## ✅ Sorting & Reordering
 
 - [ ] `sort()` – Sorts the elements in place.
-- [ ] `reverse()` – Reverses the array in place.
+- [x] `reverse()` – Reverses the array in place.
 
 ## ✅ Conversion & Representation
 
-- [ ] `join()` – Joins elements into a string.
+- [x] `join()` – Joins elements into a string.
 - [ ] `toString()` – Converts the array to a string.
 - [ ] `toLocaleString()` – Converts elements to a locale-sensitive string.
 
