@@ -212,15 +212,23 @@ class NewArray<T> {
     }
     return new NewArray(newArray);
   }
+
+  concat(...values: (T[] | T)[]) {
+    const newArray = [...this.elements];
+    for (var i = 0; i < values.length; i++) {
+      const value = values[i];
+      if (Array.isArray(value)) {
+        for (var val of value) {
+          newArray[newArray.length] = val;
+        }
+      } else {
+        newArray[newArray.length] = value;
+      }
+    }
+    return new NewArray(newArray);
+  }
 }
 
 const arr = ['God', 'jod', 'bgmi', 'hello'];
 
 const data = new NewArray(arr);
-console.log('## length', data.length);
-console.log('## indexOf', data.indexOf('God', 1));
-console.log('## includes', data.includes('God'));
-console.log('## pop', data.push());
-console.log('## push', data.push('oghiougo', 'iyf7iutoih'));
-console.log('## unshift', data.unshift('hellijso', 'osnoie'));
-console.log('## unshift', data.shift());
