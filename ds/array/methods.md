@@ -13,7 +13,7 @@
 - [x] `shift()` – Removes the first element.
 - [ ] `splice()` – Adds/removes elements at a specific index.
 - [ ] `slice()` – Returns a shallow copy of a portion of the array.
-- [ ] `concat()` – Merges two or more arrays.
+- [x] `concat()` – Merges two or more arrays.
 
 ## ✅ Searching & Indexing
 
@@ -28,28 +28,28 @@
 - [x] `forEach()` – Executes a function for each element.
 - [x] `map()` – Creates a new array by applying a function to each element.
 - [x] `filter()` – Filters elements based on a condition.
-- [ ] `reduce()` – Reduces the array to a single value.
-- [ ] `reduceRight()` – Similar to `reduce()` but from right to left.
+- [x] `reduce()` – Reduces the array to a single value.
+- [x] `reduceRight()` – Similar to `reduce()` but from right to left.
 - [x] `some()` – Returns `true` if at least one element passes the condition.
 - [x] `every()` – Returns `true` if all elements pass the condition.
-- [ ] `flat()` – Flattens nested arrays into a single array.
-- [ ] `flatMap()` – Maps and flattens one level deep.
+- [x] `flat()` – Flattens nested arrays into a single array.
+- [x] `flatMap()` – Maps and flattens one level deep.
 
 ## ✅ Sorting & Reordering
 
-- [ ] `sort()` – Sorts the elements in place.
+- [x] `sort()` – Sorts the elements in place.
 - [x] `reverse()` – Reverses the array in place.
 
 ## ✅ Conversion & Representation
 
 - [x] `join()` – Joins elements into a string.
-- [ ] `toString()` – Converts the array to a string.
-- [ ] `toLocaleString()` – Converts elements to a locale-sensitive string.
+- [x] `toString()` – Converts the array to a string.
+- [x] `toLocaleString()` – Converts elements to a locale-sensitive string.
 
 ## ✅ Copy & Fill
 
-- [ ] `copyWithin()` – Copies part of the array to another location.
-- [ ] `fill()` – Fills elements with a static value.
+- [x] `copyWithin()` – Copies part of the array to another location.
+- [x] `fill()` – Fills elements with a static value.
 
 ## ✅ Iterators (ES6)
 

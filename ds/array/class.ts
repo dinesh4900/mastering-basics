@@ -121,7 +121,7 @@ class NewArray<T> {
    * Adds all the elements of an array into a string, separated by the specified separator string.
    * @param seperator  A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma.
    */
-  join(seperator: string) {
+  join(seperator: string = ',') {
     if (this.length === 0) return '';
 
     let result = '';
@@ -226,6 +226,176 @@ class NewArray<T> {
       }
     }
     return new NewArray(newArray);
+  }
+
+  reduce<U>(
+    callbackfn: (acc: U, currVal: T, currIdx?: number, array?: T[]) => U,
+    initialValue?: U
+  ) {
+    let acc: U;
+    let startIdx = 0;
+
+    if (initialValue !== undefined) {
+      acc = initialValue;
+      startIdx = 0;
+    } else {
+      if (this.length === 0) {
+        throw new TypeError('No initial value');
+      }
+      acc = this.elements[0] as any;
+      startIdx = 1;
+    }
+
+    for (let i = startIdx; i < this.length; i++) {
+      acc = callbackfn(acc, this.elements[i], i, this.elements);
+    }
+
+    return acc;
+  }
+
+  reduceRight<U>(
+    callbackfn: (acc: U, currVal: T, currIdx?: number, array?: T[]) => U,
+    initialValue?: U
+  ) {
+    let acc: U;
+    let startIdx = 0;
+
+    if (initialValue !== undefined) {
+      acc = initialValue;
+      startIdx = this.length - 1;
+    } else {
+      if (this.length === 0) {
+        throw new TypeError('No initial value');
+      }
+      acc = this.elements[this.length - 1] as any;
+      startIdx = this.length - 2;
+    }
+
+    for (let i = startIdx; i >= 0; i--) {
+      acc = callbackfn(acc, this.elements[i], i, this.elements);
+    }
+
+    return acc;
+  }
+
+  flat(depth: number = 1): T[] {
+    let newArr = [];
+
+    for (var i = 0; i < this.length; i++) {
+      if (Array.isArray(this.elements[i]) && depth > 0) {
+        const subArray = new NewArray(this.elements[i] as T[]);
+        const flattenedSubArray = subArray.flat(depth - 1);
+
+        for (let j = 0; j < flattenedSubArray.length; j++) {
+          newArr[newArr.length] = flattenedSubArray[j];
+        }
+      } else {
+        newArr[newArr.length] = this.elements[i];
+      }
+    }
+    return newArr;
+  }
+
+  flatMap<U>(callback: (value: T, index: number, array: T[]) => U[]) {
+    const newArray: U[] = [];
+    for (let i = 0; i < this.length; i++) {
+      const mappedResult = callback(this.elements[i], i, this.elements);
+
+      for (let j = 0; j < mappedResult.length; j++) {
+        newArray[newArray.length] = mappedResult[j];
+      }
+    }
+    return new NewArray(newArray);
+  }
+  sort(): this {
+    const n = this.length;
+    for (let i = 0; i < n - 1; i++) {
+      for (let j = 0; j < n - i - 1; j++) {
+        if (String(this.elements[j]) > String(this.elements[j + 1])) {
+          const temp = this.elements[j];
+          this.elements[j] = this.elements[j + 1];
+          this.elements[j + 1] = temp;
+        }
+      }
+    }
+    return this;
+  }
+
+  toString(): string {
+    if (this.length === 0) {
+      return '';
+    }
+
+    var newVal = '';
+    for (let i = 0; i < this.length; i++) {
+      newVal = newVal + this.elements[i];
+
+      if (i < this.length - 1) {
+        newVal = newVal + ',';
+      }
+    }
+    return newVal;
+  }
+
+  toLocaleString(): string {
+    if (this.length === 0) {
+      return '';
+    }
+
+    return this.map((element) => {
+      if (element && typeof (element as any).toLocaleString === 'function') {
+        return (element as any).toLocaleString();
+      }
+      return String(element);
+    }).join(',');
+  }
+
+  copyWithin(target: number, start: number, end?: number): this {
+    const len = this.length;
+
+    let to = target < 0 ? Math.max(len + target, 0) : Math.min(target, len);
+    let from = start < 0 ? Math.max(len + start, 0) : Math.min(start, len);
+    let final =
+      end === undefined
+        ? len
+        : end < 0
+        ? Math.max(len + end, 0)
+        : Math.min(end, len);
+
+    const count = Math.min(final - from, len - to);
+
+    const temp: T[] = [];
+    for (let i = 0; i < count; i++) {
+      temp[i] = this.elements[from + i];
+    }
+
+    for (let i = 0; i < count; i++) {
+      this.elements[to + i] = temp[i];
+    }
+    return this;
+  }
+
+  fill(value: T, start?: number, end?: number): this {
+    const len = this.length;
+
+    let startIdx =
+      start === undefined
+        ? 0
+        : start < 0
+        ? Math.max(len + start, 0)
+        : Math.min(start, len);
+    let endIdx =
+      end === undefined
+        ? len
+        : end < 0
+        ? Math.max(len + end, 0)
+        : Math.min(end, len);
+
+    for (let i = startIdx; i < endIdx; i++) {
+      this.elements[i] = value;
+    }
+
+    return this;
   }
 }
 
