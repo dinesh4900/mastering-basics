@@ -1,19 +1,27 @@
 # 📚 Detailed DSA Topics Reference Guide
-*Comprehensive topic breakdown for each data structure*
+
+_Comprehensive topic breakdown for each data structure_
 
 ---
 
 ## 🧱 **ARRAYS**
 
 ### **Core Concepts:**
+
 - **Array Fundamentals**
+
   - Static vs Dynamic arrays
   - Memory layout and contiguous storage
   - Index-based access and bounds checking
   - Array initialization and declaration
 
 - **Basic Operations**
+
   - Traversal (forward/backward)
+    Forward traversal - Visting the items from start to end
+    code: for(let i = 0; i < [].length; i++){}
+    Backward traversal - Visiting the items from end to start
+    code: for(let i = [].length - 1; i >= 0; i--){}
   - Insertion (beginning, middle, end)
   - Deletion (by index, by value)
   - Searching (linear search)
@@ -27,11 +35,11 @@
   - Kadane's algorithm (maximum subarray)
 
 ### **Sorting Algorithms:**
+
 - **Elementary Sorts**
   - Bubble sort - O(n²)
   - Selection sort - O(n²)
   - Insertion sort - O(n²)
-  
 - **Efficient Sorts**
   - Merge sort - O(n log n)
   - Quick sort - O(n log n) average
@@ -40,12 +48,14 @@
   - Radix sort - O(d×n)
 
 ### **Searching Algorithms:**
+
 - Linear search - O(n)
 - Binary search - O(log n)
 - Jump search - O(√n)
 - Interpolation search - O(log log n)
 
 ### **Array Variations:**
+
 - Multi-dimensional arrays (2D, 3D)
 - Jagged arrays
 - Sparse arrays
@@ -53,6 +63,7 @@
 - Dynamic arrays (vectors, lists)
 
 ### **Time/Space Complexity:**
+
 - Access: O(1)
 - Search: O(n) unsorted, O(log n) sorted
 - Insertion: O(1) at end, O(n) at beginning/middle
@@ -64,7 +75,9 @@
 ## 📚 **STACK**
 
 ### **Core Concepts:**
+
 - **Stack Fundamentals**
+
   - LIFO (Last In, First Out) principle
   - Stack ADT (Abstract Data Type)
   - Stack vs other linear structures
@@ -78,18 +91,20 @@
   - Size - Get number of elements
 
 ### **Implementation Methods:**
+
 - **Array-based Stack**
   - Fixed size implementation
   - Dynamic resizing
   - Overflow handling
-  
 - **Linked List-based Stack**
   - Node structure
   - Dynamic memory allocation
   - No size limitations
 
 ### **Advanced Stack Applications:**
+
 - **Expression Evaluation**
+
   - Infix to postfix conversion
   - Infix to prefix conversion
   - Postfix evaluation
@@ -103,13 +118,16 @@
   - Syntax error detection
 
 ### **Algorithm Applications:**
+
 - **Tree Traversals**
+
   - Iterative DFS (Depth-First Search)
   - Pre-order traversal
   - In-order traversal
   - Post-order traversal
 
 - **Graph Algorithms**
+
   - DFS implementation
   - Topological sorting
   - Strongly connected components
@@ -121,6 +139,7 @@
   - Function call management
 
 ### **Real-World Applications:**
+
 - Browser history management
 - Text editor undo/redo
 - Function call stack in programming languages
@@ -129,6 +148,7 @@
 - Compiler design
 
 ### **Time/Space Complexity:**
+
 - Push: O(1)
 - Pop: O(1)
 - Peek: O(1)
@@ -140,7 +160,9 @@
 ## 📬 **QUEUE**
 
 ### **Core Concepts:**
+
 - **Queue Fundamentals**
+
   - FIFO (First In, First Out) principle
   - Queue ADT (Abstract Data Type)
   - Front and rear pointers
@@ -155,7 +177,9 @@
   - isFull - Check if queue is full
 
 ### **Implementation Methods:**
+
 - **Array-based Queue**
+
   - Linear queue implementation
   - Circular queue implementation
   - Dynamic array queue
@@ -167,12 +191,15 @@
   - No size limitations
 
 ### **Queue Variations:**
+
 - **Circular Queue**
+
   - Efficient space utilization
   - Modular arithmetic for indexing
   - Avoiding linear queue limitations
 
 - **Double-ended Queue (Deque)**
+
   - Insertion/deletion at both ends
   - Input-restricted deque
   - Output-restricted deque
@@ -183,13 +210,16 @@
   - Applications in scheduling
 
 ### **Advanced Applications:**
+
 - **Graph Algorithms**
+
   - BFS (Breadth-First Search)
   - Level-order tree traversal
   - Shortest path in unweighted graphs
   - Connected components
 
 - **System Applications**
+
   - CPU scheduling (Round Robin)
   - Process management
   - Print job scheduling
@@ -201,12 +231,14 @@
   - Asynchronous data transfer
 
 ### **Algorithm Patterns:**
+
 - Level-order traversal
 - Shortest path algorithms
 - Multi-threading applications
 - Producer-consumer problems
 
 ### **Time/Space Complexity:**
+
 - Enqueue: O(1)
 - Dequeue: O(1)
 - Front/Rear: O(1)
@@ -218,7 +250,9 @@
 ## 🔗 **LINKED LIST**
 
 ### **Core Concepts:**
+
 - **Linked List Fundamentals**
+
   - Node structure (data + pointer)
   - Dynamic memory allocation
   - Non-contiguous memory storage
@@ -232,18 +266,22 @@
   - Length calculation
 
 ### **Types of Linked Lists:**
+
 - **Singly Linked List**
+
   - Basic implementation
   - One-way traversal
   - Memory efficient
 
 - **Doubly Linked List**
+
   - Bidirectional traversal
   - Previous and next pointers
   - Easier deletion
   - More memory overhead
 
 - **Circular Linked List**
+
   - Last node points to first
   - Continuous traversal
   - Applications in round-robin scheduling
@@ -253,13 +291,16 @@
   - Bidirectional circular traversal
 
 ### **Advanced Operations:**
+
 - **List Manipulation**
+
   - Reversing a linked list
   - Merging two sorted lists
   - Finding middle element
   - Detecting and removing duplicates
 
 - **Cycle Detection**
+
   - Floyd's cycle detection (tortoise and hare)
   - Cycle detection and removal
   - Finding cycle start point
@@ -271,13 +312,16 @@
   - Flattening multilevel linked list
 
 ### **Memory Management:**
+
 - Dynamic memory allocation
 - Memory leaks prevention
 - Garbage collection considerations
 - Pointer manipulation safety
 
 ### **Applications:**
+
 - **Data Structure Implementation**
+
   - Stack implementation
   - Queue implementation
   - Hash table collision resolution
@@ -289,6 +333,7 @@
   - Music playlist management
 
 ### **Comparison with Arrays:**
+
 - Memory allocation (dynamic vs static)
 - Access time (O(n) vs O(1))
 - Insertion/deletion efficiency
@@ -296,6 +341,7 @@
 - Cache performance
 
 ### **Time/Space Complexity:**
+
 - Access: O(n)
 - Search: O(n)
 - Insertion: O(1) with reference, O(n) without
@@ -307,7 +353,9 @@
 ## 🌳 **TREE**
 
 ### **Core Concepts:**
+
 - **Tree Fundamentals**
+
   - Root, nodes, leaves, edges
   - Parent-child relationships
   - Height, depth, and level
@@ -321,13 +369,16 @@
   - Internal and external nodes
 
 ### **Binary Tree:**
+
 - **Basic Properties**
+
   - Each node has at most 2 children
   - Left and right child distinction
   - Complete vs incomplete trees
   - Full vs complete binary trees
 
 - **Binary Tree Traversals**
+
   - **Depth-First Traversals**
     - Pre-order (Root → Left → Right)
     - In-order (Left → Root → Right)
@@ -344,12 +395,15 @@
   - Diameter calculation
 
 ### **Binary Search Tree (BST):**
+
 - **BST Properties**
+
   - Left subtree < root < right subtree
   - In-order traversal gives sorted sequence
   - Search, insert, delete operations
 
 - **BST Operations**
+
   - Search operation - O(log n) average
   - Insertion - maintaining BST property
   - Deletion - three cases (leaf, one child, two children)
@@ -363,7 +417,9 @@
   - Splay trees
 
 ### **Advanced Tree Concepts:**
+
 - **Tree Balancing**
+
   - Why balancing matters
   - Rotation operations (left, right)
   - AVL tree rotations
@@ -376,7 +432,9 @@
   - Syntax trees in compilers
 
 ### **Heap (Binary Heap):**
+
 - **Heap Properties**
+
   - Complete binary tree
   - Heap property (min-heap, max-heap)
   - Parent-child relationship
@@ -388,12 +446,15 @@
   - Build heap from array
 
 ### **Other Tree Types:**
+
 - **N-ary Trees**
+
   - More than 2 children per node
   - Generic tree operations
   - Applications in hierarchical data
 
 - **Segment Trees**
+
   - Range query problems
   - Lazy propagation
   - Update and query operations
@@ -404,6 +465,7 @@
   - Space-efficient implementation
 
 ### **Time/Space Complexity:**
+
 - **Binary Tree**: O(n) for most operations
 - **BST (balanced)**: O(log n) for search, insert, delete
 - **BST (unbalanced)**: O(n) worst case
@@ -415,7 +477,9 @@
 ## 🔤 **TRIE (PREFIX TREE)**
 
 ### **Core Concepts:**
+
 - **Trie Fundamentals**
+
   - Prefix-based storage
   - Character-by-character storage
   - Root represents empty string
@@ -428,13 +492,16 @@
   - Space optimization techniques
 
 ### **Basic Operations:**
+
 - **Insertion**
+
   - Character-by-character insertion
   - Creating new nodes as needed
   - Marking end of words
   - Handling duplicate insertions
 
 - **Search Operations**
+
   - Word search (exact match)
   - Prefix search
   - Wildcard search (with . as any character)
@@ -447,7 +514,9 @@
   - Maintaining trie integrity
 
 ### **Advanced Trie Concepts:**
+
 - **Trie Variations**
+
   - Compressed trie (radix tree)
   - Suffix trie
   - Ternary search trie
@@ -459,7 +528,9 @@
   - Memory-efficient node representation
 
 ### **Trie Applications:**
+
 - **String Processing**
+
   - Auto-complete systems
   - Spell checkers
   - Word games (Scrabble, Boggle)
@@ -472,7 +543,9 @@
   - Pattern matching
 
 ### **Advanced Algorithms:**
+
 - **Trie-based Sorting**
+
   - Radix sort using trie
   - Lexicographic ordering
   - String sorting algorithms
@@ -483,6 +556,7 @@
   - Failure function computation
 
 ### **Real-World Applications:**
+
 - Search engines (query suggestions)
 - IDE auto-completion
 - Contact search in phones
@@ -490,6 +564,7 @@
 - Genome sequence analysis
 
 ### **Time/Space Complexity:**
+
 - **Search**: O(m) where m = string length
 - **Insert**: O(m) where m = string length
 - **Delete**: O(m) where m = string length
@@ -501,7 +576,9 @@
 ## 🔐 **HASHMAP / HASHSET**
 
 ### **Core Concepts:**
+
 - **Hashing Fundamentals**
+
   - Hash function properties
   - Uniform distribution
   - Deterministic behavior
@@ -514,7 +591,9 @@
   - Resizing strategies
 
 ### **Hash Functions:**
+
 - **Simple Hash Functions**
+
   - Division method
   - Mid-square method
   - Folding method
@@ -527,7 +606,9 @@
   - Rolling hash (Rabin-Karp)
 
 ### **Collision Resolution:**
+
 - **Open Addressing**
+
   - Linear probing
   - Quadratic probing
   - Double hashing
@@ -539,7 +620,9 @@
   - Coalesced hashing
 
 ### **Advanced Concepts:**
+
 - **Dynamic Resizing**
+
   - Load factor thresholds
   - Rehashing strategies
   - Amortized analysis
@@ -552,7 +635,9 @@
   - Consistent hashing
 
 ### **HashMap vs HashSet:**
+
 - **HashMap**
+
   - Key-value storage
   - Duplicate keys not allowed
   - Value retrieval by key
@@ -565,13 +650,16 @@
   - Applications in deduplication
 
 ### **Applications:**
+
 - **Caching Systems**
+
   - LRU cache implementation
   - Database query caching
   - Web page caching
   - Memory management
 
 - **Database Systems**
+
   - Index structures
   - Join operations
   - Query optimization
@@ -584,12 +672,14 @@
   - Rate limiting
 
 ### **Performance Optimization:**
+
 - Choosing good hash functions
 - Managing load factors
 - Minimizing cache misses
 - Memory layout optimization
 
 ### **Time/Space Complexity:**
+
 - **Average Case**: O(1) for all operations
 - **Worst Case**: O(n) with poor hash function
 - **Space**: O(n) plus table overhead
@@ -600,7 +690,9 @@
 ## 🏔️ **HEAP (PRIORITY QUEUE)**
 
 ### **Core Concepts:**
+
 - **Heap Fundamentals**
+
   - Complete binary tree property
   - Heap property (min-heap/max-heap)
   - Parent-child relationships
@@ -613,13 +705,16 @@
   - Fibonacci heap
 
 ### **Basic Operations:**
+
 - **Insertion (Bubble Up)**
+
   - Add element at end
   - Compare with parent
   - Swap if heap property violated
   - Continue until heap property restored
 
 - **Extraction (Bubble Down)**
+
   - Remove root element
   - Replace with last element
   - Compare with children
@@ -633,12 +728,15 @@
   - Build heap from unsorted array
 
 ### **Advanced Heap Operations:**
+
 - **Decrease/Increase Key**
+
   - Modify element priority
   - Restore heap property
   - Applications in algorithms
 
 - **Delete Arbitrary Element**
+
   - Replace with last element
   - Restore heap property
   - Handle both directions
@@ -649,17 +747,21 @@
   - Efficient merge strategies
 
 ### **Heap Variations:**
+
 - **Binary Heap**
+
   - Standard implementation
   - Array-based storage
   - Good cache performance
 
 - **Binomial Heap**
+
   - Collection of binomial trees
   - Efficient merge operations
   - Lazy evaluation
 
 - **Fibonacci Heap**
+
   - Amortized constant time operations
   - Complex implementation
   - Theoretical importance
@@ -670,13 +772,16 @@
   - Path-based operations
 
 ### **Applications:**
+
 - **Algorithm Implementation**
+
   - Dijkstra's shortest path
   - Prim's minimum spanning tree
   - Huffman coding
-  - A* search algorithm
+  - A\* search algorithm
 
 - **System Applications**
+
   - Task scheduling
   - Process prioritization
   - Event simulation
@@ -689,6 +794,7 @@
   - Order statistics
 
 ### **Heap Sort:**
+
 - Build max-heap from array
 - Repeatedly extract maximum
 - Place at end of array
@@ -696,6 +802,7 @@
 - Space complexity: O(1)
 
 ### **Real-World Applications:**
+
 - Operating system schedulers
 - Network routing protocols
 - Graphics rendering (z-buffer)
@@ -703,6 +810,7 @@
 - Medical emergency systems
 
 ### **Time/Space Complexity:**
+
 - **Insert**: O(log n)
 - **Extract Min/Max**: O(log n)
 - **Peek**: O(1)
@@ -715,7 +823,9 @@
 ## 🌐 **GRAPH**
 
 ### **Core Concepts:**
+
 - **Graph Fundamentals**
+
   - Vertices (nodes) and edges
   - Directed vs undirected graphs
   - Weighted vs unweighted graphs
@@ -728,13 +838,16 @@
   - Strongly connected components
 
 ### **Graph Representations:**
+
 - **Adjacency Matrix**
+
   - 2D array representation
   - Space: O(V²)
   - Fast edge lookup: O(1)
   - Dense graph representation
 
 - **Adjacency List**
+
   - Array of lists
   - Space: O(V + E)
   - Memory efficient for sparse graphs
@@ -747,7 +860,9 @@
   - Space: O(E)
 
 ### **Graph Traversal Algorithms:**
+
 - **Depth-First Search (DFS)**
+
   - Recursive implementation
   - Stack-based implementation
   - Applications: cycle detection, topological sort
@@ -760,7 +875,9 @@
   - Time: O(V + E), Space: O(V)
 
 ### **Shortest Path Algorithms:**
+
 - **Single Source Shortest Path**
+
   - Dijkstra's algorithm (non-negative weights)
   - Bellman-Ford algorithm (negative weights)
   - Applications in routing protocols
@@ -771,7 +888,9 @@
   - Transitive closure
 
 ### **Minimum Spanning Tree:**
+
 - **Kruskal's Algorithm**
+
   - Edge-based approach
   - Uses Union-Find data structure
   - Greedy algorithm
@@ -784,13 +903,16 @@
   - Time: O(E log V)
 
 ### **Advanced Graph Algorithms:**
+
 - **Topological Sorting**
+
   - DFS-based approach
   - Kahn's algorithm (BFS-based)
   - Applications in scheduling
   - Cycle detection
 
 - **Strongly Connected Components**
+
   - Kosaraju's algorithm
   - Tarjan's algorithm
   - Applications in social networks
@@ -802,7 +924,9 @@
   - Applications in transportation
 
 ### **Graph Types:**
+
 - **Special Graphs**
+
   - Trees (connected acyclic graphs)
   - DAG (Directed Acyclic Graph)
   - Bipartite graphs
@@ -814,19 +938,23 @@
   - Negative cycles
 
 ### **Applications:**
+
 - **Social Networks**
+
   - Friend recommendations
   - Community detection
   - Influence propagation
   - Social media analysis
 
 - **Transportation Systems**
+
   - Route planning
   - Traffic optimization
   - Public transport networks
   - Navigation systems
 
 - **Computer Networks**
+
   - Internet routing
   - Network topology
   - Load balancing
@@ -839,7 +967,9 @@
   - Project management
 
 ### **Graph Problems:**
+
 - **Classic Problems**
+
   - Traveling Salesman Problem
   - Graph coloring
   - Hamiltonian path/cycle
@@ -852,6 +982,7 @@
   - Assignment problems
 
 ### **Time/Space Complexity:**
+
 - **Adjacency Matrix**: Space O(V²), Edge lookup O(1)
 - **Adjacency List**: Space O(V+E), Edge lookup O(degree)
 - **DFS/BFS**: Time O(V+E), Space O(V)
@@ -863,23 +994,28 @@
 ## 🔄 **ADVANCED TOPICS & COMBINATIONS**
 
 ### **Hybrid Data Structures:**
+
 - **LRU Cache**
+
   - HashMap + Doubly Linked List
   - O(1) access and eviction
   - Real-world caching systems
 
 - **Trie + Heap**
+
   - Auto-complete with ranking
   - Search suggestions with frequency
   - Real-time search systems
 
 - **Graph + Priority Queue**
   - Dijkstra's algorithm implementation
-  - A* pathfinding
+  - A\* pathfinding
   - Network routing protocols
 
 ### **Advanced Algorithms:**
+
 - **Dynamic Programming on Trees**
+
   - Tree DP problems
   - Lowest Common Ancestor
   - Heavy-light decomposition
@@ -890,7 +1026,9 @@
   - Planar graph algorithms
 
 ### **System Design Applications:**
+
 - **Distributed Systems**
+
   - Consistent hashing
   - Distributed hash tables
   - Load balancing algorithms
@@ -901,7 +1039,9 @@
   - Index structures
 
 ### **Complexity Analysis:**
+
 - **Amortized Analysis**
+
   - Aggregate method
   - Accounting method
   - Potential method

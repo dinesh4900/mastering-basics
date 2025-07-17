@@ -397,6 +397,91 @@ class NewArray<T> {
 
     return this;
   }
+
+  entries() {
+    const temp = this;
+    let idx = 0;
+    return {
+      [Symbol.iterator]() {
+        return this;
+      },
+      next() {
+        if (idx < temp.length) {
+          const value = [idx, temp.elements[idx]];
+          idx++;
+          return { value, done: false };
+        } else {
+          return { value: undefined, done: true };
+        }
+      },
+    };
+  }
+
+  values() {
+    const temp = this;
+    let idx = 0;
+    return {
+      [Symbol.iterator]() {
+        return this;
+      },
+      next() {
+        if (idx < temp.length) {
+          return { value: temp.elements[idx++], done: false };
+        } else {
+          return { value: undefined, done: true };
+        }
+      },
+    };
+  }
+
+  keys() {
+    const temp = this;
+    let idx = 0;
+    return {
+      [Symbol.iterator]() {
+        return this;
+      },
+      next() {
+        if (idx < temp.length) {
+          return { value: idx++, done: false };
+        } else {
+          return { value: undefined, done: true };
+        }
+      },
+    };
+  }
+
+  static isArray(target: any) {
+    const value = Object.prototype.toString.call(target);
+    return '[object Array]' === value;
+  }
+
+  static of(...items: unknown[]) {
+    const arr = [];
+    for (let i = 0; i < items.length; i++) {
+      arr[i] = items[i];
+    }
+    return new NewArray(arr);
+  }
+
+  static from<T>(iterable: Iterable<T>) {
+    const results = [];
+    let index = 0;
+    for (const value of iterable) {
+      const mappedValue = value as any;
+      results[results.length] = mappedValue;
+      index++;
+    }
+    return new NewArray(results);
+  }
+
+  slice(start?: number, end?: number) {
+    const temp = [];
+    for (let i = start || 0; i < (end || this.length); i++) {
+      temp[i] = this.elements[i];
+    }
+    return new NewArray(temp);
+  }
 }
 
 const arr = ['God', 'jod', 'bgmi', 'hello'];
