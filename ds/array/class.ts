@@ -482,6 +482,32 @@ class NewArray<T> {
     }
     return new NewArray(temp);
   }
+
+  splice(
+    start: number,
+    deleteCount: number = this.elements.length - start,
+    ...items: any[]
+  ) {
+    const removed: any[] = [];
+
+    if (start < 0) {
+      start = this.elements.length + start;
+      if (start < 0) start = 0;
+    }
+
+    deleteCount = Math.min(deleteCount, this.elements.length - start);
+
+    for (let i = 0; i < deleteCount; i++) {
+      removed.push(this.elements[start + i]);
+    }
+
+    const before = this.elements.slice(0, start);
+    const after = this.elements.slice(start + deleteCount);
+
+    this.elements = before.concat(items, after);
+
+    return removed;
+  }
 }
 
 const arr = ['God', 'jod', 'bgmi', 'hello'];
